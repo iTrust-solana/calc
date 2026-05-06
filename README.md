@@ -18,13 +18,13 @@ GpXJ6y5gn2wBaQTm7ZAuGrSgueGKKUfJ1MNGfZzu1rNe
 
 ## Prerequisites
 
-| Tool | Version |
-|---|---|
-| Rust | 1.95+ |
-| Solana CLI | 3.x |
-| Anchor CLI | 1.0.0 |
-| Node.js | 18+ |
-| npm | 9+ |
+| Tool       | Version |
+| ---------- | ------- |
+| Rust       | 1.95+   |
+| Solana CLI | 3.x     |
+| Anchor CLI | 1.0.0   |
+| Node.js    | 18+     |
+| npm        | 9+      |
 
 ## Project Structure
 
@@ -97,7 +97,7 @@ solana airdrop 2
 anchor deploy --provider.cluster devnet
 
 # 4. Verify deployment
-solana program show <PROGRAM_ID>
+solana program show GpXJ6y5gn2wBaQTm7ZAuGrSgueGKKUfJ1MNGfZzu1rNe
 ```
 
 ## Instructions Reference
@@ -107,6 +107,7 @@ solana program show <PROGRAM_ID>
 Creates the Calculator PDA account for the signing user.
 
 **Accounts:**
+
 - `calculator` — PDA (writable, init)
 - `user` — Signer (writable, payer)
 - `system_program` — System Program
@@ -128,15 +129,16 @@ Stores `a * b` in the calculator. Returns `Overflow` on overflow.
 Stores `a / b` in the calculator. Returns `DivisionByZero` if `b == 0`.
 
 **Shared accounts for add/subtract/multiply/divide:**
+
 - `calculator` — PDA (writable)
 - `user` — Signer (must be the authority that initialized the calculator)
 
 ## Error Codes
 
-| Code | Name | Message |
-|---|---|---|
+| Code | Name             | Message                         |
+| ---- | ---------------- | ------------------------------- |
 | 6000 | `DivisionByZero` | Division by zero is not allowed |
-| 6001 | `Overflow` | Arithmetic overflow |
+| 6001 | `Overflow`       | Arithmetic overflow             |
 
 ## License
 
